@@ -96,6 +96,13 @@ for (var i = 0; i < textareas.length; i++) {
 }
 
 
+if(nochecked > 0){
+
+    return true
+}else{
+    return false
+}
+
 }
 
 
@@ -111,6 +118,8 @@ console.log('Developed By a Mechanic from ME11 SMME NUST')
 chrome.runtime.onMessage.addListener(
     function(recieved, sender, sendResponse) {
 
+ 
+     
         var ratings = recieved.ratings
         var text_message= recieved.text_message
 
@@ -118,9 +127,14 @@ chrome.runtime.onMessage.addListener(
 
         console.log(ratings)
         
-        fill_form(ratings,text_message)
+        filled = fill_form(ratings,text_message)
 
-        sendResponse("Form Filled");
+            sendResponse(filled);
+        
+
+        
+
+
 
     }
 );

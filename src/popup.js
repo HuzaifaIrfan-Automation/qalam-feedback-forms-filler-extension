@@ -147,8 +147,21 @@ var rating =qalam_feedback_ratings[i]
 
 
 
-const fill_btn = document.querySelector('#fill');
-fill_btn.addEventListener('click', (event) => {
+const fill_all_forms_btn = document.querySelector('#fill_all_forms');
+fill_all_forms_btn.addEventListener('click', (event) => {
+
+  fill_forms(ratings,text_message)
+    
+   
+});
+
+
+
+
+
+
+const fill_form_btn = document.querySelector('#fill_form');
+fill_form_btn.addEventListener('click', (event) => {
 
     console.log(ratings)
 
@@ -168,17 +181,16 @@ fill_btn.addEventListener('click', (event) => {
 
 
 
-
-
-
-
-
 function fill_form(ratings,text_message){
 
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {ratings: ratings,text_message: text_message}, function(response){
      
-        document.getElementById("response").innerText = response
+      if (response){
+
+        document.getElementById("response").innerText = "Form Filled"
+
+      }
 
     });
 });
@@ -187,4 +199,60 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 }
 
 
+
+// function extract_body(){
+
+//   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+//   chrome.tabs.sendMessage(tabs[0].id, {extract_body:true}, function(response){
+
+// return response
+     
+  
+
+// });
+
+// });
+
+// }
+
+function fill_forms(ratings,text_message){
+
+
+var forms_filled=0
+
+  chrome.tabs.query({}, function(tabs) {
+
+
+    for (var i=0; i<tabs.length; ++i) {
+     
+
+        chrome.tabs.sendMessage(tabs[i].id, {ratings: ratings,text_message: text_message}, function(response){
+
+          console.log(response)
+          
+          if (response){
+
+
+        
+          ++forms_filled;
+
+          document.getElementById("response").innerText = `${forms_filled} Forms Filled`
+
+        }
+
+         
+  
+      });
+
+    }
+
+
+});
+     
+
+    
+
+
+
+}
 
