@@ -22,14 +22,29 @@ var text_message="..."
 let ratings = [2,3]
 
 
+textarea.value = text_message
+console.log(text_message)
+
+for (let i in ratings) {
+  var rating =ratings[i]
+      console.log(rating)
+     
+      document.getElementById(String(rating)).checked = true;
+      
+  
+    }
+
+
 try{
 
 chrome.storage.local.get("qalam_feedback_comments_text", value =>{
     var qalam_feedback_comments_text = value.qalam_feedback_comments_text
+
+    if (qalam_feedback_comments_text){
     text_message=qalam_feedback_comments_text
     textarea.value = text_message
     console.log(text_message)
-    
+    }
     
 
 })
@@ -39,7 +54,7 @@ chrome.storage.local.get("qalam_feedback_ratings", value =>{
     var qalam_feedback_ratings = value.qalam_feedback_ratings
    console.log(qalam_feedback_ratings)
 
-
+if(qalam_feedback_ratings){
    for (let i in qalam_feedback_ratings) {
 var rating =qalam_feedback_ratings[i]
     console.log(rating)
@@ -48,6 +63,7 @@ var rating =qalam_feedback_ratings[i]
     
 
   }
+}
 
 
 
@@ -62,6 +78,9 @@ var rating =qalam_feedback_ratings[i]
 
     chrome.storage.local.set({"qalam_feedback_ratings":ratings})
     chrome.storage.local.set({"qalam_feedback_comments_text":text_message})
+
+
+      
 
 }
 
