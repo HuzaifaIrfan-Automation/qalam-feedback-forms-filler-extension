@@ -40,7 +40,7 @@ try{
 chrome.storage.local.get("qalam_feedback_comments_text", value =>{
     var qalam_feedback_comments_text = value.qalam_feedback_comments_text
 
-    if (qalam_feedback_comments_text){
+    if (qalam_feedback_comments_text != undefined){
     text_message=qalam_feedback_comments_text
     textarea.value = text_message
     console.log(text_message)
@@ -54,7 +54,13 @@ chrome.storage.local.get("qalam_feedback_ratings", value =>{
     var qalam_feedback_ratings = value.qalam_feedback_ratings
    console.log(qalam_feedback_ratings)
 
-if(qalam_feedback_ratings){
+if(qalam_feedback_ratings != undefined){
+
+for(let i=0; i<5; i++){
+
+  document.getElementById(String(i)).checked = false;
+}
+
    for (let i in qalam_feedback_ratings) {
 var rating =qalam_feedback_ratings[i]
     console.log(rating)
