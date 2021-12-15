@@ -1,18 +1,18 @@
 body {
-    width: 700px;
-    height: 600px;
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding:20px;
+  width: 700px;
+  height: 600px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }
 
 p {
-    display: inner-flex;
-    margin: auto 10px;
-    font-size: 10px;
-    border-radius: 6px;
-    border: 1px solid lightblue;
-    padding: 10px;
+  display: inner-flex;
+  margin: auto 10px;
+  font-size: 10px;
+  border-radius: 6px;
+  border: 1px solid lightblue;
+  padding: 10px;
 }

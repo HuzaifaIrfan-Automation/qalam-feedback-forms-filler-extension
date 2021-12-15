@@ -127,15 +127,13 @@ close_all_forms_btn.addEventListener("click", (event) => {
   close_all_forms();
 });
 
-
 const rid_all_forms_btn = document.querySelector("#rid_all_forms");
 rid_all_forms_btn.addEventListener("click", (event) => {
   rid_all_forms();
 });
 
 function rid_all_forms() {
-
-  open_all_forms()
+  open_all_forms();
 
   setTimeout(() => {
     fill_forms(ratings, text_message, true);
@@ -148,32 +146,21 @@ function rid_all_forms() {
   setTimeout(() => {
     refresh_feedback_page();
   }, 25000);
-
-
-
-
 }
 
-
-
 function close_all_forms() {
-  
-
   chrome.tabs.query({}, function (tabs) {
     for (var i = 0; i < tabs.length; ++i) {
       chrome.tabs.sendMessage(
         tabs[i].id,
         {
           op: 3,
-      
         },
         function (response) {
           console.log(response);
 
           if (response) {
-            document.getElementById(
-              "response"
-            ).innerText = `All Forms Closed`;
+            document.getElementById("response").innerText = `All Forms Closed`;
           }
         }
       );
@@ -182,23 +169,18 @@ function close_all_forms() {
 }
 
 function refresh_feedback_page() {
-  
-
   chrome.tabs.query({}, function (tabs) {
     for (var i = 0; i < tabs.length; ++i) {
       chrome.tabs.sendMessage(
         tabs[i].id,
         {
           op: 4,
-      
         },
         function (response) {
           console.log(response);
 
           if (response) {
-            document.getElementById(
-              "response"
-            ).innerText = `All Forms Filled`;
+            document.getElementById("response").innerText = `All Forms Filled`;
           }
         }
       );
@@ -206,20 +188,17 @@ function refresh_feedback_page() {
   });
 }
 
-
-
 function open_all_forms() {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.tabs.sendMessage(tabs[0].id, { op: 1 }, function (response) {
       console.log("Opening all forms");
 
       if (response) {
-        document.getElementById("response").innerText =
-          "Opened All Forms";
-          console.log(response)
-          for(var i=0; i<response.length; i++){
-          chrome.tabs.create({url: response[i], active: false});
-          }
+        document.getElementById("response").innerText = "Opened All Forms";
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+          chrome.tabs.create({ url: response[i], active: false });
+        }
       }
     });
   });

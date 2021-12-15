@@ -1,31 +1,25 @@
 {
-    "name": "Qalam Feedback Filler",
-    "description": "Odoo Qalam Nust Feedback Filler Developed By a Mechanic from ME11 SMME NUST",
-    "version": "0.0.1",
-    "manifest_version": 2,
+  "name": "Qalam Feedback Filler",
+  "description": "Odoo Qalam Nust Feedback Filler Developed By a Mechanic from ME11 SMME NUST",
+  "version": "0.0.1",
+  "manifest_version": 2,
 
-    "content_scripts": [
-        {
-          "matches": ["https://qalam.nust.edu.pk/*"],
-          "js": ["inject.js"],
-          "run_at" :"document_end"
+  "content_scripts": [
+    {
+      "matches": ["https://qalam.nust.edu.pk/*"],
+      "js": ["inject.js"],
+      "run_at": "document_end"
+    }
+  ],
 
-        }
-      ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "logo.png"
+  },
+  "icons": {
+    "512": "logo.png"
+  },
 
-   
-    "browser_action": {
-        "default_popup": "popup.html",
-        "default_icon": "logo.png"
-    },
-    "icons": {
-        "512": "logo.png"
-    },
-
-    "options_page": "./options.html",
-    "permissions":[
-    "tabs",
-    "https://qalam.nust.edu.pk/*",
-    "storage"
-    ]
+  "options_page": "./options.html",
+  "permissions": ["tabs", "https://qalam.nust.edu.pk/*", "storage"]
 }

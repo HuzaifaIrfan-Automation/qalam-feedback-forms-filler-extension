@@ -113,26 +113,26 @@ function submit_form() {
 }
 
 function openInNewTab(url) {
-    var win = window.open(url, '_blank');
-    self.focus();
-    // window.focus();
-    // win.focus();
-  }
+  var win = window.open(url, "_blank");
+  self.focus();
+  // window.focus();
+  // win.focus();
+}
 
 function open_feedback_forms() {
   var links = document.querySelectorAll("a[class='md-list-addon-element']");
 
-  var feed_back_links=[]
+  var feed_back_links = [];
   for (var i = 0; i < links.length; i++) {
     // console.log(links[i]);
-    var href=links[i].href
-    feed_back_links.push(href)
+    var href = links[i].href;
+    feed_back_links.push(href);
     // openInNewTab(href)
-  
+
     // links[i].click();
   }
-  console.log(feed_back_links)
-  return feed_back_links
+  console.log(feed_back_links);
+  return feed_back_links;
 }
 
 function close_tab() {
@@ -151,18 +151,12 @@ console.log(pathArray);
     sender,
     sendResponse
   ) {
-
-
-   
     var op = recieved.op;
-    var response=false
+    var response = false;
     if (pathArray[1] == "survey") {
-      
-
-
       if (op == 3) {
         close_tab();
-        response=true
+        response = true;
       }
 
       if (op == 2) {
@@ -177,25 +171,20 @@ console.log(pathArray);
         console.log(`\n Submit State: ${submit_state}`);
 
         response = fill_form(ratings, text_message, submit_state);
-
       }
     }
 
     if (pathArray[3] == "feedback") {
-      
       if (op == 1) {
         var feed_back_links = open_feedback_forms();
-        response=feed_back_links
+        response = feed_back_links;
       }
 
-
-      //Refresh page and get rid of form 
+      //Refresh page and get rid of form
       if (op == 4) {
         window.location.reload();
-        response=true
+        response = true;
       }
-
-      
     }
 
     sendResponse(response);
