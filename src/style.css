@@ -1,6 +1,6 @@
 body {
-    width: 440px;
-    height: 400px;
+    width: 700px;
+    height: 600px;
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
