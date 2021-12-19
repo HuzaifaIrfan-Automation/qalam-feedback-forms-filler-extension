@@ -106,7 +106,7 @@ function fill_form(ratings, text_message, submit_state) {
 
 function submit_form() {
   var submit_btn = document.getElementsByName("button_submit")[0];
-  // Submit the form
+ 
   setTimeout(() => {
     submit_btn.click();
   }, 100);
@@ -154,6 +154,11 @@ console.log(pathArray);
     var op = recieved.op;
     var response = false;
     if (pathArray[1] == "survey") {
+
+      if (op == 5) {
+        submit_form()
+        response = true;
+      }
       if (op == 3) {
         close_tab();
         response = true;

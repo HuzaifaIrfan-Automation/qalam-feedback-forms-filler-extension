@@ -106,6 +106,13 @@ fill_all_forms_btn.addEventListener("click", (event) => {
   fill_forms(ratings, text_message, submit_state);
 });
 
+const submit_all_forms_btn = document.querySelector("#submit_all_forms");
+submit_all_forms_btn.addEventListener("click", (event) => {
+  submit_all_forms();
+});
+
+
+
 const fill_form_btn = document.querySelector("#fill_form");
 fill_form_btn.addEventListener("click", (event) => {
   console.log(ratings);
@@ -264,3 +271,31 @@ function fill_forms(ratings, text_message, submit_state) {
     }
   });
 }
+
+
+function submit_all_forms() {
+  var forms_submitted = 0;
+
+  chrome.tabs.query({}, function (tabs) {
+    for (var i = 0; i < tabs.length; ++i) {
+      chrome.tabs.sendMessage(
+        tabs[i].id,
+        {
+          op: 5,
+        },
+        function (response) {
+          console.log(response);
+
+          if (response) {
+            ++forms_submitted;
+
+            document.getElementById(
+              "response"
+            ).innerText = `${forms_submitted} Forms Submitted`;
+          }
+        }
+      );
+    }
+  });
+}
+

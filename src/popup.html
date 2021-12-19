@@ -53,7 +53,8 @@
       ></textarea>
     </div>
 
-    <div class="form-check form-switch">
+    <div class="jumbotron">
+    <div class="form-check form-switch form-check-inline">
       <input
         class="form-check-input"
         type="checkbox"
@@ -63,7 +64,30 @@
         value="submit_switch"
       />
       <label class="form-check-label" for="submit_switch">Submit</label>
+
+
+
     </div>
+    
+    <div class="form-check form-switch form-check-inline">
+      <input
+      type="button"
+      class="btn btn-primary mb-3"
+      id="submit_all_forms"
+      value="Submit All Forms"
+    />
+  </div>
+
+
+    <div class="form-check form-switch form-check-inline">
+
+    <h2 id="response" align="center"></h2>
+  </div>
+
+
+
+  </div>
+
 
     <br />
     <input
@@ -101,7 +125,6 @@
       value="Get Rid of All Forms"
     />
 
-    <h2 id="response" align="center"></h2>
 
     <script defer src="popup.js"></script>
   </body>
