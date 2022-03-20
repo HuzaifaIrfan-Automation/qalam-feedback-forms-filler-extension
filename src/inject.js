@@ -3,6 +3,47 @@ function fill_form(ratings, text_message, submit_state) {
 
   // Developed By a Mechanic from ME11 SMME NUST
 
+
+  var dropdowns= document.getElementsByClassName('nav-link dropdown-toggle')
+
+  try{
+    var user_name =dropdowns[0].text.trim()
+  }catch{
+    var user_name = undefined
+
+  }
+
+
+  var h1s=document.getElementsByTagName('h1')
+  try{
+    var form_title = h1s[0].textContent
+  }catch{
+    var form_title =undefined
+  }
+  
+
+
+  console.log(`User Name: ${user_name}`)
+  console.log(`Form Title: ${form_title}`)
+  console.log(`Ratings: ${ratings}`)
+  console.log(`Comment: ${text_message}`)
+  console.log(`Submitted: ${submit_state}`)
+
+
+
+  var log_obj = {
+    'user_name':user_name,
+    'form_title':form_title,
+    'ratings':ratings,
+    'comment':text_message,
+    'submitted':submit_state
+  }
+
+  
+
+  log_it(log_obj)
+
+
   // value of rating
   // 2 for Excellent
   // 0 for Average
@@ -102,6 +143,50 @@ function fill_form(ratings, text_message, submit_state) {
   } else {
     return false;
   }
+}
+
+function log_it(log_obj){
+
+  
+
+
+
+
+
+
+  // let host = "http://localhost:3000/"
+  let host = "https://qalam-feedback-filler.herokuapp.com/"
+  let url = `${host}logs?json=${JSON.stringify(log_obj)}`;
+  // let headers = {
+  //     'Accept': 'application/json',
+  //     'Content-Type': 'application/json',
+  //     'mode':'cors'
+  // };
+
+  //   await fetch(
+  //       url,
+  //       {
+  //           method: "POST",
+  //           headers: headers,
+  //           body: JSON.stringify(log_obj)
+  //       },
+  //   ).then(async rawResponse =>{
+  //       var content = await rawResponse.json()
+  //       console.log(content);
+  //   });
+
+    fetch(
+        url,
+        {
+            method: "GET"
+        },
+    ).then(rawResponse =>{
+        var content = rawResponse.json()
+        console.log(content);
+    });
+
+
+
 }
 
 function submit_form() {

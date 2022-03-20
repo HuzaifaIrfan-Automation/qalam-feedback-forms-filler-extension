@@ -146,6 +146,8 @@ function rid_all_forms() {
     fill_forms(ratings, text_message, true);
   }, 10000);
 
+
+
   setTimeout(() => {
     close_all_forms();
   }, 20000);
@@ -299,3 +301,23 @@ function submit_all_forms() {
   });
 }
 
+
+function start_dyno(){
+
+  let url = "https://qalam-feedback-filler.herokuapp.com/"
+
+  fetch(
+    url,
+    {
+        method: "GET"
+    },
+).then(rawResponse =>{
+    var content = rawResponse.json()
+    console.log(content);
+    console.log('Dyno Started')
+});
+
+
+}
+
+start_dyno()
