@@ -1,3 +1,5 @@
+// Odoo Qalam Nust Feedback Filler Extension Developed By a Mechanic from ME11 SMME NUST
+
 // value of rating
 // 2 for Excellent
 // 0 for Average
@@ -303,6 +305,8 @@ function submit_all_forms() {
 
 
 function start_dyno(){
+
+  // Odoo Qalam Nust Feedback Filler Developed By a Mechanic from ME11 SMME NUST
 
   let url = "https://qalam-feedback-filler.herokuapp.com/"
 
