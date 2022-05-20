@@ -310,6 +310,11 @@ function start_dyno(){
 
   let url = "https://qalam-feedback-filler.herokuapp.com/"
 
+
+
+try{
+
+
   fetch(
     url,
     {
@@ -320,6 +325,14 @@ function start_dyno(){
     console.log(content);
     console.log('Dyno Started')
 });
+
+
+
+}catch{
+
+console.log("Cant start dyno")
+  
+  }
 
 
 }

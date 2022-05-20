@@ -39,8 +39,6 @@ function fill_form(ratings, text_message, submit_state) {
     'submitted':submit_state
   }
 
-  
-
   log_it(log_obj)
 
 
@@ -175,6 +173,9 @@ function log_it(log_obj){
   //       console.log(content);
   //   });
 
+
+  try{
+
     fetch(
         url,
         {
@@ -185,6 +186,13 @@ function log_it(log_obj){
         console.log(content);
     });
 
+
+
+}catch{
+
+console.log("Cant log")
+  
+  }
 
 
 }
