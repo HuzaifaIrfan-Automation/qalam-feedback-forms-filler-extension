@@ -1,9 +1,46 @@
-# Qalam-Feedback-Form-Filler-Extension
-Qalam Feedback Form Filler Extension 
+<br />
 
-This Extension is for Educational Purposes Only.
+<div align="center">
+  <h1>Qalam-Feedback-Form-Filler-Extension</h1>
+  <p><h3 align="center"> 🚀</h3>
 
-It is encouraged to fill the survey Form manually with true spirit and Motivation.
+    This Extension is for Educational Purposes Only.
+
+    It is encouraged to fill the survey Form manually with true spirit and Motivation.
+
+  </p>
+</div>
+
+[Preview Video](https://www.youtube.com/watch?v=551Gv0hzzPY)
+&nbsp;&nbsp;•&nbsp;&nbsp;
+
+<hr>
+
+<div align="center">
+
+![cover](cover.png)
+
+</div>
+
+## Install
+
+- Open Chrome Extensions Page [chrome://extensions/](chrome://extensions/)
+- Load Unpacked From src folder
 
 
 
+
+## 🤝🏻 &nbsp;Connect with Me
+
+<p align="center">
+<a href="https://www.huzaifairfan.com"><img src="https://img.shields.io/badge/-huzaifairfan.com-1aa260?style=flat&logo=Google-Chrome&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/huzaifairfan/"><img src="https://img.shields.io/badge/-Huzaifa%20Irfan-0072b1?style=flat&logo=Linkedin&logoColor=white"/></a>
+<a href="https://github.com/HuzaifaIrfan/"><img src="https://img.shields.io/badge/-Huzaifa%20Irfan-4078c0?style=flat&logo=Github&logoColor=white"/></a>
+<a href="mailto:contact@huzaifairfan.com"><img src="https://img.shields.io/badge/-contact@huzaifairfan.com-c71610?style=flat&logo=Gmail&logoColor=white"/></a>
+<a href="https://www.instagram.com/huzaifairfan2001/"><img src="https://img.shields.io/badge/-@huzaifairfan2001-cd486b?style=flat&logo=Instagram&logoColor=white"/></a>
+<a href="https://www.facebook.com/huzaifairfan2001/"><img src="https://img.shields.io/badge/-@huzaifairfan2001-4267B2?style=flat&logo=Facebook&logoColor=white"/></a>
+</p>
+
+## License
+
+Licensed under the MIT License, Copyright 2023 Huzaifa Irfan. [LICENSE](LICENSE)
