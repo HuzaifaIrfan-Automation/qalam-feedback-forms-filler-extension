@@ -11,16 +11,13 @@
   </p>
 </div>
 
-[Preview Video](https://www.youtube.com/watch?v=551Gv0hzzPY)
 &nbsp;&nbsp;•&nbsp;&nbsp;
 
 <hr>
 
-<div align="center">
+## Demo Video
 
-![cover](cover.png)
-
-</div>
+[![Demo Video](https://img.youtube.com/vi/551Gv0hzzPY/0.jpg)](https://www.youtube.com/watch?v=551Gv0hzzPY)
 
 ## Install
 
